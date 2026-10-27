@@ -105,6 +105,12 @@ h1 {
   font-weight: 600;
 }
 
+.key-note {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  text-wrap: pretty;
+}
+
 /* How we did this */
 
 .method {
@@ -143,6 +149,7 @@ h1 {
 
 .chart {
   position: relative;
+  scroll-margin-top: 1rem;
   margin-top: 4rem;
   padding-top: 2.5rem;
   border-top: 1px solid var(--rule);

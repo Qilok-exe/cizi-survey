@@ -31,6 +31,7 @@
 
   function figure(q) {
     const fig = el("figure", "chart chart-" + q.chart);
+    fig.id = q.id.toLowerCase();
     const caption = el("figcaption");
     const title = el("h2", "chart-title");
     title.id = q.id.toLowerCase() + "-title";
