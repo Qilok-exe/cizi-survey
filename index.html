@@ -13,31 +13,40 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="page">
-    <header class="masthead">
-      <h1>Cizi survey</h1>
-      <p class="intro">These are the results of a short, anonymous survey about how students bank. Most of the people who answered are Boston College students. We ran it on Google Forms for the Citizens Bank case competition. If you have any questions, reach us at <a href="mailto:qilok.exe@gmail.com">qilok.exe@gmail.com</a>.</p>
-      <p class="count"><span class="count-num" data-fill="respondents"></span> people answered</p>
-      <p class="key-note">The most important questions are <a href="#q10">Q10&nbsp;and&nbsp;Q11</a>, which we wrote specifically for this survey.</p>
-    </header>
+  <main>
+    <div class="page">
+      <header class="masthead">
+        <h1>Cizi survey</h1>
+        <p class="intro">These are the results of a short, anonymous survey about how students bank. Most of the people who answered are Boston College students. We ran it on Google Forms for the Citizens Bank case competition. If you have any questions, reach us at <a href="mailto:qilok.exe@gmail.com">qilok.exe@gmail.com</a>.</p>
+        <p class="count"><span class="count-num" data-fill="respondents"></span> people answered</p>
+        <p class="key-note">The most important questions are <a href="#featured">Q10&nbsp;and&nbsp;Q11</a>, which we wrote specifically for this survey.</p>
+      </header>
 
-    <section class="method" aria-labelledby="method-title">
-      <h2 id="method-title">How we did this</h2>
-      <dl>
-        <dt>Who</dt>
-        <dd>A team of students at Boston College. An independent student project, not run by Citizens or Boston College.</dd>
-        <dt>When</dt>
-        <dd>October 22 to October 28, 2026.</dd>
-        <dt>How</dt>
-        <dd>An anonymous Google Form. No names or emails were collected.</dd>
-        <dt>Who answered</dt>
-        <dd><span data-fill="respondents"></span> people, mostly Boston College students (<span data-fill="first-year-share"></span> first-years).</dd>
-      </dl>
-      <p>It’s not a random sample, so the results describe the people who answered, not all students. That’s why there’s no margin of error.</p>
-      <p>Questions appear as asked. We grouped the short answers for two questions (main bank, biggest annoyance). Percentages are rounded, so some won’t add to 100.</p>
+      <section class="method" aria-labelledby="method-title">
+        <h2 id="method-title">How we did this</h2>
+        <dl>
+          <dt>Who</dt>
+          <dd>A team of students at Boston College. An independent student project, not run by Citizens or Boston College.</dd>
+          <dt>When</dt>
+          <dd>October 22 to October 28, 2026.</dd>
+          <dt>How</dt>
+          <dd>An anonymous Google Form. No names or emails were collected.</dd>
+          <dt>Who answered</dt>
+          <dd><span data-fill="respondents"></span> people, mostly Boston College students (<span data-fill="first-year-share"></span> first-years).</dd>
+        </dl>
+        <p>It’s not a random sample, so the results describe the people who answered, not all students. That’s why there’s no margin of error.</p>
+        <p>Questions appear as asked. We grouped the short answers for two questions (main bank, biggest annoyance). Percentages are rounded, so some won’t add to 100.</p>
+      </section>
+
+      <div id="results"></div>
+    </div>
+
+    <section class="featured" id="featured" aria-labelledby="featured-title">
+      <div class="page">
+        <h2 class="featured-title" id="featured-title">The two questions we wrote for this survey</h2>
+        <div id="featured-results"></div>
+      </div>
     </section>
-
-    <div id="results"></div>
   </main>
 
   <footer class="site-footer">

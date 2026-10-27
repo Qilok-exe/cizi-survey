@@ -1,6 +1,8 @@
 // Survey counts. Every percent on the page is computed from these.
 // pick: "one" = single answer, "many" = more than one answer allowed.
 // last: true keeps a catch-all at the end when a chart is sorted by size.
+// shading: which end of an ordered scale gets the darkest green.
+// featured: shown in the band for the questions we wrote for this survey.
 var SURVEY = {
   respondents: 285,
   questions: [
@@ -50,7 +52,7 @@ var SURVEY = {
       chart: "heatmap",
       pick: "many",
       n: 285,
-      note: "People could pick more than one option per row",
+      notes: ["People could pick more than one option per row"],
       columns: ["Main bank app", "Venmo", "Zelle", "Cash App", "Apple Pay/Cash", "Other app", "Nothing"],
       rows: [
         { label: "Getting paid", counts: [222, 23, 46, 11, 9, 14, 0] },
@@ -64,8 +66,9 @@ var SURVEY = {
     {
       id: "Q5",
       text: "How often do you open your bank’s app?",
-      chart: "bars",
+      chart: "donut",
       order: "asked",
+      shading: "first-darkest",
       pick: "one",
       n: 285,
       options: [
@@ -112,7 +115,7 @@ var SURVEY = {
     {
       id: "Q7",
       text: "Most annoying or missing in your money setup?",
-      chart: "bars",
+      chart: "ranked",
       order: "size",
       pick: "one",
       n: 285,
@@ -128,11 +131,11 @@ var SURVEY = {
     {
       id: "Q8",
       text: "Has anything made you question your setup?",
-      chart: "bars",
+      chart: "circles",
       order: "size",
       pick: "many",
       n: 285,
-      note: "More than one answer allowed",
+      notes: ["More than one answer allowed"],
       options: [
         { label: "Moving off campus", count: 97 },
         { label: "A friend’s recommendation", count: 71 },
@@ -147,12 +150,12 @@ var SURVEY = {
     {
       id: "Q9",
       text: "What would make you move your paycheck to a new bank?",
-      chart: "bars",
+      chart: "lollipop",
       order: "size",
       pick: "many",
       maxPicks: 3,
       n: 285,
-      note: "Up to three answers",
+      notes: ["Up to three answers"],
       options: [
         { label: "Strong scam protection", count: 134 },
         { label: "No fees", count: 114 },
@@ -169,6 +172,9 @@ var SURVEY = {
       text: "How often would you use a small in-app helper that explains features and answers money questions?",
       chart: "columns",
       order: "asked",
+      shading: "last-darkest",
+      featured: true,
+      headline: ["4", "5"],
       pick: "one",
       n: 285,
       ends: ["Least often", "Most often"],
@@ -185,9 +191,10 @@ var SURVEY = {
       text: "What would you let it do?",
       chart: "bars",
       order: "asked",
+      featured: true,
       pick: "many",
       n: 285,
-      note: "More than one answer allowed",
+      notes: ["Ordered from least to most control", "More than one answer allowed"],
       options: [
         { label: "Answer questions", count: 217 },
         { label: "Suggest things", count: 185 },
