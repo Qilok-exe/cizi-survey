@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Cizi survey</title>
+  <meta name="description" content="These are the results of a short, anonymous survey about how students bank.">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="masthead">
+      <h1>Cizi survey</h1>
+      <p class="intro">These are the results of a short, anonymous survey about how students bank. Most of the people who answered are Boston College students. We ran it on Google Forms for the Citizens Bank case competition. If you have any questions, reach us at <a href="mailto:qilok.exe@gmail.com">qilok.exe@gmail.com</a>.</p>
+      <p class="count"><span class="count-num" data-fill="respondents"></span> people answered</p>
+    </header>
+
+    <section class="method" aria-labelledby="method-title">
+      <h2 id="method-title">How we did this</h2>
+      <dl>
+        <dt>Who</dt>
+        <dd>A team of students at Boston College. An independent student project, not run by Citizens or Boston College.</dd>
+        <dt>When</dt>
+        <dd>October 22 to October 26, 2026.</dd>
+        <dt>How</dt>
+        <dd>An anonymous Google Form. No names or emails were collected.</dd>
+        <dt>Who answered</dt>
+        <dd><span data-fill="respondents"></span> people, mostly Boston College students (<span data-fill="first-year-share"></span> first-years).</dd>
+      </dl>
+      <p>It’s not a random sample, so the results describe the people who answered, not all students. That’s why there’s no margin of error.</p>
+      <p>Questions appear as asked. We grouped the short answers for two questions (main bank, biggest annoyance). Percentages are rounded, so some won’t add to 100.</p>
+    </section>
+
+    <div id="results"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page">
+      <a href="mailto:qilok.exe@gmail.com">qilok.exe@gmail.com</a>
+      <a href="cizi-survey-counts.csv" download>Download the numbers (CSV)</a>
+      <span>2026</span>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
