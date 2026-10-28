@@ -1,130 +1,130 @@
 ﻿question,question_text,item,answer,count,n
-Q1,Year in school,,First-year,177,285
-Q1,Year in school,,Sophomore,68,285
-Q1,Year in school,,Junior,27,285
-Q1,Year in school,,Senior,6,285
-Q1,Year in school,,Grad,2,285
-Q1,Year in school,,Not a student (recent grad),5,285
-Q3,Who picked it?,,A parent or family member,129,285
-Q3,Who picked it?,,It came with a job or school,48,285
-Q3,Who picked it?,,Me,68,285
-Q3,Who picked it?,,Other,40,285
-Q4,What do you use for each of these?,Getting paid,Main bank app,222,285
-Q4,What do you use for each of these?,Getting paid,Venmo,23,285
-Q4,What do you use for each of these?,Getting paid,Zelle,46,285
-Q4,What do you use for each of these?,Getting paid,Cash App,11,285
-Q4,What do you use for each of these?,Getting paid,Apple Pay/Cash,9,285
-Q4,What do you use for each of these?,Getting paid,Other app,14,285
-Q4,What do you use for each of these?,Getting paid,Nothing,0,285
-Q4,What do you use for each of these?,Paying friends,Main bank app,63,285
-Q4,What do you use for each of these?,Paying friends,Venmo,117,285
-Q4,What do you use for each of these?,Paying friends,Zelle,68,285
-Q4,What do you use for each of these?,Paying friends,Cash App,43,285
-Q4,What do you use for each of these?,Paying friends,Apple Pay/Cash,57,285
-Q4,What do you use for each of these?,Paying friends,Other app,23,285
-Q4,What do you use for each of these?,Paying friends,Nothing,6,285
-Q4,What do you use for each of these?,Everyday spending,Main bank app,128,285
-Q4,What do you use for each of these?,Everyday spending,Venmo,17,285
-Q4,What do you use for each of these?,Everyday spending,Zelle,11,285
-Q4,What do you use for each of these?,Everyday spending,Cash App,26,285
-Q4,What do you use for each of these?,Everyday spending,Apple Pay/Cash,97,285
-Q4,What do you use for each of these?,Everyday spending,Other app,20,285
-Q4,What do you use for each of these?,Everyday spending,Nothing,3,285
-Q4,What do you use for each of these?,Saving,Main bank app,148,285
-Q4,What do you use for each of these?,Saving,Venmo,14,285
-Q4,What do you use for each of these?,Saving,Zelle,9,285
-Q4,What do you use for each of these?,Saving,Cash App,31,285
-Q4,What do you use for each of these?,Saving,Apple Pay/Cash,23,285
-Q4,What do you use for each of these?,Saving,Other app,46,285
-Q4,What do you use for each of these?,Saving,Nothing,29,285
-Q4,What do you use for each of these?,Investing,Main bank app,83,285
-Q4,What do you use for each of these?,Investing,Venmo,17,285
-Q4,What do you use for each of these?,Investing,Zelle,3,285
-Q4,What do you use for each of these?,Investing,Cash App,40,285
-Q4,What do you use for each of these?,Investing,Apple Pay/Cash,9,285
-Q4,What do you use for each of these?,Investing,Other app,108,285
-Q4,What do you use for each of these?,Investing,Nothing,43,285
-Q4,What do you use for each of these?,Tracking spending,Main bank app,68,285
-Q4,What do you use for each of these?,Tracking spending,Venmo,6,285
-Q4,What do you use for each of these?,Tracking spending,Zelle,6,285
-Q4,What do you use for each of these?,Tracking spending,Cash App,17,285
-Q4,What do you use for each of these?,Tracking spending,Apple Pay/Cash,3,285
-Q4,What do you use for each of these?,Tracking spending,Other app,137,285
-Q4,What do you use for each of these?,Tracking spending,Nothing,60,285
-Q5,How often do you open your bank’s app?,,Daily,51,285
-Q5,How often do you open your bank’s app?,,Weekly,108,285
-Q5,How often do you open your bank’s app?,,Monthly,77,285
-Q5,How often do you open your bank’s app?,,Rarely,49,285
-Q6,Can your bank’s app do these?,Freeze your card,Yes,254,285
-Q6,Can your bank’s app do these?,Freeze your card,No,11,285
-Q6,Can your bank’s app do these?,Freeze your card,Not sure,20,285
-Q6,Can your bank’s app do these?,Low-balance alerts,Yes,222,285
-Q6,Can your bank’s app do these?,Low-balance alerts,No,46,285
-Q6,Can your bank’s app do these?,Low-balance alerts,Not sure,17,285
-Q6,Can your bank’s app do these?,Show your credit score,Yes,141,285
-Q6,Can your bank’s app do these?,Show your credit score,No,57,285
-Q6,Can your bank’s app do these?,Show your credit score,Not sure,87,285
-Q6,Can your bank’s app do these?,Round up purchases into savings,Yes,154,285
-Q6,Can your bank’s app do these?,Round up purchases into savings,No,103,285
-Q6,Can your bank’s app do these?,Round up purchases into savings,Not sure,28,285
-Q6,Can your bank’s app do these?,Switch your paycheck to it in the app,Yes,134,285
-Q6,Can your bank’s app do these?,Switch your paycheck to it in the app,No,117,285
-Q6,Can your bank’s app do these?,Switch your paycheck to it in the app,Not sure,34,285
-Q6,Can your bank’s app do these?,Make a virtual card number,Yes,24,285
-Q6,Can your bank’s app do these?,Make a virtual card number,No,201,285
-Q6,Can your bank’s app do these?,Make a virtual card number,Not sure,60,285
-Q6,Can your bank’s app do these?,Show all your subscriptions,Yes,63,285
-Q6,Can your bank’s app do these?,Show all your subscriptions,No,154,285
-Q6,Can your bank’s app do these?,Show all your subscriptions,Not sure,68,285
-Q6,Can your bank’s app do these?,Dispute a charge,Yes,17,285
-Q6,Can your bank’s app do these?,Dispute a charge,No,74,285
-Q6,Can your bank’s app do these?,Dispute a charge,Not sure,194,285
-Q6,Can your bank’s app do these?,Set up an eSIM to use abroad,Yes,3,285
-Q6,Can your bank’s app do these?,Set up an eSIM to use abroad,No,248,285
-Q6,Can your bank’s app do these?,Set up an eSIM to use abroad,Not sure,34,285
-Q6,Can your bank’s app do these?,Track paycheck switch until it lands,Yes,43,285
-Q6,Can your bank’s app do these?,Track paycheck switch until it lands,No,197,285
-Q6,Can your bank’s app do these?,Track paycheck switch until it lands,Not sure,45,285
-Q6,Can your bank’s app do these?,Find subscriptions I forgot,Yes,9,285
-Q6,Can your bank’s app do these?,Find subscriptions I forgot,No,205,285
-Q6,Can your bank’s app do these?,Find subscriptions I forgot,Not sure,71,285
-Q6,Can your bank’s app do these?,Tell me what’s safe to spend until payday,Yes,22,285
-Q6,Can your bank’s app do these?,Tell me what’s safe to spend until payday,No,234,285
-Q6,Can your bank’s app do these?,Tell me what’s safe to spend until payday,Not sure,29,285
-Q6,Can your bank’s app do these?,Send money when I type a name and amount,Yes,60,285
-Q6,Can your bank’s app do these?,Send money when I type a name and amount,No,188,285
-Q6,Can your bank’s app do these?,Send money when I type a name and amount,Not sure,37,285
-Q6,Can your bank’s app do these?,Let me practice a feature first,Yes,14,285
-Q6,Can your bank’s app do these?,Let me practice a feature first,No,251,285
-Q6,Can your bank’s app do these?,Let me practice a feature first,Not sure,20,285
-Q7,Most annoying or missing in your money setup?,,No idea what I can spend until payday,83,285
-Q7,Most annoying or missing in your money setup?,,Scams / fees / “gotcha” charges,74,285
-Q7,Most annoying or missing in your money setup?,,Subscriptions I forgot or don’t know how to cancel,57,285
-Q7,Most annoying or missing in your money setup?,,App is confusing / too many steps for basic stuff,40,285
-Q7,Most annoying or missing in your money setup?,,"Switching paycheck is a scary, multi-step ordeal",26,285
-Q7,Most annoying or missing in your money setup?,,"Other (paper statements, customer service, foreign fees)",5,285
-Q8,Has anything made you question your setup?,,Moving off campus,97,285
-Q8,Has anything made you question your setup?,,A friend’s recommendation,71,285
-Q8,Has anything made you question your setup?,,First paycheck,68,285
-Q8,Has anything made you question your setup?,,Fees,54,285
-Q8,Has anything made you question your setup?,,Fraud or scam scare,49,285
-Q8,Has anything made you question your setup?,,Bad customer service,31,285
-Q8,Has anything made you question your setup?,,Studying abroad,14,285
-Q8,Has anything made you question your setup?,,Nothing,37,285
-Q9,What would make you move your paycheck to a new bank?,,Strong scam protection,134,285
-Q9,What would make you move your paycheck to a new bank?,,No fees,114,285
-Q9,What would make you move your paycheck to a new bank?,,Help managing money,103,285
-Q9,What would make you move your paycheck to a new bank?,,Better app,80,285
-Q9,What would make you move your paycheck to a new bank?,,Rewards,71,285
-Q9,What would make you move your paycheck to a new bank?,,A real person to talk to,48,285
-Q9,What would make you move your paycheck to a new bank?,,Free use abroad,34,285
-Q9,What would make you move your paycheck to a new bank?,,Paid project or job opportunities,17,285
-Q10,How often would you use a small in-app helper that explains features and answers money questions?,,1,5,285
-Q10,How often would you use a small in-app helper that explains features and answers money questions?,,2,21,285
-Q10,How often would you use a small in-app helper that explains features and answers money questions?,,3,78,285
-Q10,How often would you use a small in-app helper that explains features and answers money questions?,,4,114,285
-Q10,How often would you use a small in-app helper that explains features and answers money questions?,,5,67,285
-Q11,What would you let it do?,,Answer questions,217,285
-Q11,What would you let it do?,,Suggest things,185,285
-Q11,What would you let it do?,,"Do things for you, only after you allow it",165,285
-Q11,What would you let it do?,,Run rules I set (like “move $20 to savings every Friday”),123,285
+Q1,Year in school,,First-year,89,143
+Q1,Year in school,,Sophomore,34,143
+Q1,Year in school,,Junior,14,143
+Q1,Year in school,,Senior,3,143
+Q1,Year in school,,Grad,1,143
+Q1,Year in school,,Not a student (recent grad),2,143
+Q3,Who picked it?,,A parent or family member,65,143
+Q3,Who picked it?,,It came with a job or school,24,143
+Q3,Who picked it?,,Me,34,143
+Q3,Who picked it?,,Other,20,143
+Q4,What do you use for each of these?,Getting paid,Main bank app,111,143
+Q4,What do you use for each of these?,Getting paid,Venmo,12,143
+Q4,What do you use for each of these?,Getting paid,Zelle,23,143
+Q4,What do you use for each of these?,Getting paid,Cash App,6,143
+Q4,What do you use for each of these?,Getting paid,Apple Pay/Cash,5,143
+Q4,What do you use for each of these?,Getting paid,Other app,7,143
+Q4,What do you use for each of these?,Getting paid,Nothing,0,143
+Q4,What do you use for each of these?,Paying friends,Main bank app,32,143
+Q4,What do you use for each of these?,Paying friends,Venmo,59,143
+Q4,What do you use for each of these?,Paying friends,Zelle,34,143
+Q4,What do you use for each of these?,Paying friends,Cash App,22,143
+Q4,What do you use for each of these?,Paying friends,Apple Pay/Cash,29,143
+Q4,What do you use for each of these?,Paying friends,Other app,12,143
+Q4,What do you use for each of these?,Paying friends,Nothing,3,143
+Q4,What do you use for each of these?,Everyday spending,Main bank app,64,143
+Q4,What do you use for each of these?,Everyday spending,Venmo,9,143
+Q4,What do you use for each of these?,Everyday spending,Zelle,6,143
+Q4,What do you use for each of these?,Everyday spending,Cash App,13,143
+Q4,What do you use for each of these?,Everyday spending,Apple Pay/Cash,49,143
+Q4,What do you use for each of these?,Everyday spending,Other app,10,143
+Q4,What do you use for each of these?,Everyday spending,Nothing,2,143
+Q4,What do you use for each of these?,Saving,Main bank app,74,143
+Q4,What do you use for each of these?,Saving,Venmo,7,143
+Q4,What do you use for each of these?,Saving,Zelle,5,143
+Q4,What do you use for each of these?,Saving,Cash App,16,143
+Q4,What do you use for each of these?,Saving,Apple Pay/Cash,12,143
+Q4,What do you use for each of these?,Saving,Other app,23,143
+Q4,What do you use for each of these?,Saving,Nothing,15,143
+Q4,What do you use for each of these?,Investing,Main bank app,42,143
+Q4,What do you use for each of these?,Investing,Venmo,9,143
+Q4,What do you use for each of these?,Investing,Zelle,2,143
+Q4,What do you use for each of these?,Investing,Cash App,20,143
+Q4,What do you use for each of these?,Investing,Apple Pay/Cash,5,143
+Q4,What do you use for each of these?,Investing,Other app,54,143
+Q4,What do you use for each of these?,Investing,Nothing,22,143
+Q4,What do you use for each of these?,Tracking spending,Main bank app,34,143
+Q4,What do you use for each of these?,Tracking spending,Venmo,3,143
+Q4,What do you use for each of these?,Tracking spending,Zelle,3,143
+Q4,What do you use for each of these?,Tracking spending,Cash App,9,143
+Q4,What do you use for each of these?,Tracking spending,Apple Pay/Cash,2,143
+Q4,What do you use for each of these?,Tracking spending,Other app,69,143
+Q4,What do you use for each of these?,Tracking spending,Nothing,30,143
+Q5,How often do you open your bank’s app?,,Daily,26,143
+Q5,How often do you open your bank’s app?,,Weekly,54,143
+Q5,How often do you open your bank’s app?,,Monthly,39,143
+Q5,How often do you open your bank’s app?,,Rarely,24,143
+Q6,Can your bank’s app do these?,Freeze your card,Yes,127,143
+Q6,Can your bank’s app do these?,Freeze your card,No,6,143
+Q6,Can your bank’s app do these?,Freeze your card,Not sure,10,143
+Q6,Can your bank’s app do these?,Low-balance alerts,Yes,111,143
+Q6,Can your bank’s app do these?,Low-balance alerts,No,23,143
+Q6,Can your bank’s app do these?,Low-balance alerts,Not sure,9,143
+Q6,Can your bank’s app do these?,Show your credit score,Yes,71,143
+Q6,Can your bank’s app do these?,Show your credit score,No,28,143
+Q6,Can your bank’s app do these?,Show your credit score,Not sure,44,143
+Q6,Can your bank’s app do these?,Round up purchases into savings,Yes,77,143
+Q6,Can your bank’s app do these?,Round up purchases into savings,No,52,143
+Q6,Can your bank’s app do these?,Round up purchases into savings,Not sure,14,143
+Q6,Can your bank’s app do these?,Switch your paycheck to it in the app,Yes,67,143
+Q6,Can your bank’s app do these?,Switch your paycheck to it in the app,No,59,143
+Q6,Can your bank’s app do these?,Switch your paycheck to it in the app,Not sure,17,143
+Q6,Can your bank’s app do these?,Make a virtual card number,Yes,12,143
+Q6,Can your bank’s app do these?,Make a virtual card number,No,101,143
+Q6,Can your bank’s app do these?,Make a virtual card number,Not sure,30,143
+Q6,Can your bank’s app do these?,Show all your subscriptions,Yes,32,143
+Q6,Can your bank’s app do these?,Show all your subscriptions,No,77,143
+Q6,Can your bank’s app do these?,Show all your subscriptions,Not sure,34,143
+Q6,Can your bank’s app do these?,Dispute a charge,Yes,9,143
+Q6,Can your bank’s app do these?,Dispute a charge,No,37,143
+Q6,Can your bank’s app do these?,Dispute a charge,Not sure,97,143
+Q6,Can your bank’s app do these?,Set up an eSIM to use abroad,Yes,2,143
+Q6,Can your bank’s app do these?,Set up an eSIM to use abroad,No,124,143
+Q6,Can your bank’s app do these?,Set up an eSIM to use abroad,Not sure,17,143
+Q6,Can your bank’s app do these?,Track paycheck switch until it lands,Yes,21,143
+Q6,Can your bank’s app do these?,Track paycheck switch until it lands,No,99,143
+Q6,Can your bank’s app do these?,Track paycheck switch until it lands,Not sure,23,143
+Q6,Can your bank’s app do these?,Find subscriptions I forgot,Yes,4,143
+Q6,Can your bank’s app do these?,Find subscriptions I forgot,No,103,143
+Q6,Can your bank’s app do these?,Find subscriptions I forgot,Not sure,36,143
+Q6,Can your bank’s app do these?,Tell me what’s safe to spend until payday,Yes,11,143
+Q6,Can your bank’s app do these?,Tell me what’s safe to spend until payday,No,117,143
+Q6,Can your bank’s app do these?,Tell me what’s safe to spend until payday,Not sure,15,143
+Q6,Can your bank’s app do these?,Send money when I type a name and amount,Yes,30,143
+Q6,Can your bank’s app do these?,Send money when I type a name and amount,No,94,143
+Q6,Can your bank’s app do these?,Send money when I type a name and amount,Not sure,19,143
+Q6,Can your bank’s app do these?,Let me practice a feature first,Yes,7,143
+Q6,Can your bank’s app do these?,Let me practice a feature first,No,126,143
+Q6,Can your bank’s app do these?,Let me practice a feature first,Not sure,10,143
+Q7,Most annoying or missing in your money setup?,,No idea what I can spend until payday,42,143
+Q7,Most annoying or missing in your money setup?,,Scams / fees / “gotcha” charges,37,143
+Q7,Most annoying or missing in your money setup?,,Subscriptions I forgot or don’t know how to cancel,29,143
+Q7,Most annoying or missing in your money setup?,,App is confusing / too many steps for basic stuff,20,143
+Q7,Most annoying or missing in your money setup?,,"Switching paycheck is a scary, multi-step ordeal",13,143
+Q7,Most annoying or missing in your money setup?,,"Other (paper statements, customer service, foreign fees)",2,143
+Q8,Has anything made you question your setup?,,Moving off campus,49,143
+Q8,Has anything made you question your setup?,,A friend’s recommendation,36,143
+Q8,Has anything made you question your setup?,,First paycheck,34,143
+Q8,Has anything made you question your setup?,,Fees,27,143
+Q8,Has anything made you question your setup?,,Fraud or scam scare,25,143
+Q8,Has anything made you question your setup?,,Bad customer service,16,143
+Q8,Has anything made you question your setup?,,Studying abroad,7,143
+Q8,Has anything made you question your setup?,,Nothing,19,143
+Q9,What would make you move your paycheck to a new bank?,,Strong scam protection,67,143
+Q9,What would make you move your paycheck to a new bank?,,No fees,57,143
+Q9,What would make you move your paycheck to a new bank?,,Help managing money,52,143
+Q9,What would make you move your paycheck to a new bank?,,Better app,40,143
+Q9,What would make you move your paycheck to a new bank?,,Rewards,36,143
+Q9,What would make you move your paycheck to a new bank?,,A real person to talk to,24,143
+Q9,What would make you move your paycheck to a new bank?,,Free use abroad,17,143
+Q9,What would make you move your paycheck to a new bank?,,Paid project or job opportunities,9,143
+Q10,How often would you use a small in-app helper that explains features and answers money questions?,,1,2,143
+Q10,How often would you use a small in-app helper that explains features and answers money questions?,,2,11,143
+Q10,How often would you use a small in-app helper that explains features and answers money questions?,,3,39,143
+Q10,How often would you use a small in-app helper that explains features and answers money questions?,,4,57,143
+Q10,How often would you use a small in-app helper that explains features and answers money questions?,,5,34,143
+Q11,What would you let it do?,,Answer questions,109,143
+Q11,What would you let it do?,,Suggest things,93,143
+Q11,What would you let it do?,,"Do things for you, only after you allow it",83,143
+Q11,What would you let it do?,,Run rules I set (like “move $20 to savings every Friday”),62,143
