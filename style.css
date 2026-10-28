@@ -16,6 +16,10 @@
   --value-space: 5.5rem;
   --bar: 20px;
 
+  /* How long charts take to grow in, and the curve: fast at first, then slowing down */
+  --grow: 1100ms;
+  --ease: cubic-bezier(0.25, 1, 0.5, 1);
+
   color-scheme: light;
 }
 
@@ -97,6 +101,7 @@ h1 {
 }
 
 .count {
+  --grow: 1600ms;
   margin-top: 2.25rem;
   font-size: 2.25rem;
   line-height: 1.15;
@@ -516,6 +521,8 @@ h1 {
   height: 2.5rem;
   min-width: 4rem;
   padding: 0 0.25rem;
+  background: var(--fill);
+  color: var(--ink);
   text-align: center;
   font-size: 0.9375rem;
 }
@@ -628,6 +635,61 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem 2rem;
+}
+
+/* Growing in. app.js sets .motion on <html> when motion is allowed, and .is-in on each chart the first time it scrolls into view. */
+
+.motion .bar,
+.motion .ranked-bar {
+  transition: width var(--grow) var(--ease) var(--delay, 0ms);
+}
+
+.motion .col-bar {
+  transition: height var(--grow) var(--ease) var(--delay, 0ms);
+}
+
+.motion .circle {
+  transition: transform var(--grow) var(--ease) var(--delay, 0ms);
+}
+
+.motion .stack {
+  clip-path: inset(0);
+  transition: clip-path var(--grow) var(--ease) var(--delay, 0ms);
+}
+
+.motion .donut-sweep {
+  transition: stroke-dashoffset var(--grow) var(--ease);
+}
+
+/* The text flips in one step once the cell has mostly darkened, so it never fades through gray. */
+.motion .heatmap td:not(.heatmap-corner) {
+  transition: background-color var(--grow) var(--ease) var(--delay, 0ms), color 0s calc(var(--delay, 0ms) + var(--grow) / 4);
+}
+
+.motion .chart:not(.is-in) .bar,
+.motion .chart:not(.is-in) .ranked-bar {
+  width: 0;
+}
+
+.motion .chart:not(.is-in) .col-bar {
+  height: 0;
+}
+
+.motion .chart:not(.is-in) .circle {
+  transform: scale(0);
+}
+
+.motion .chart:not(.is-in) .stack {
+  clip-path: inset(0 100% 0 0);
+}
+
+.motion .chart:not(.is-in) .donut-sweep {
+  stroke-dashoffset: var(--around);
+}
+
+.motion .chart:not(.is-in) .heatmap td:not(.heatmap-corner) {
+  background-color: var(--tint);
+  color: var(--text);
 }
 
 .sr-only {

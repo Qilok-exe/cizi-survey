@@ -5,6 +5,11 @@
   const results = document.getElementById("results");
   const featuredResults = document.getElementById("featured-results");
   const SVG = "http://www.w3.org/2000/svg";
+  const root = document.documentElement;
+
+  // Charts grow and numbers count up the first time they scroll into view, unless the reader asked for less motion.
+  const motion = "IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (motion) root.classList.add("motion");
 
   const percent = (count, n) => Math.round((count / n) * 100);
   const number = (value) => value.toLocaleString("en-US");
@@ -31,9 +36,23 @@
     return main.concat(tail);
   }
 
+  // A number that counts up from zero when its chart comes into view.
+  const format = (node, value) => number(value) + node.dataset.unit;
+
+  function counter(className, value, unit) {
+    const node = el("span", className);
+    node.dataset.to = value;
+    node.dataset.unit = unit || "";
+    node.textContent = format(node, value);
+    return node;
+  }
+
+  // Rows start one after another; a bar and its number share the delay.
+  const stagger = (node, i) => node.style.setProperty("--delay", Math.min(i * 50, 400) + "ms");
+
   function valueLabel(className, count, n) {
     const value = el("span", className);
-    value.append(el("span", "value-pct", percent(count, n) + "%"), el("span", "value-count", number(count)));
+    value.append(counter("value-pct", percent(count, n), "%"), counter("value-count", count));
     return value;
   }
 
@@ -151,8 +170,9 @@
     const options = ordered(q);
     const list = el("div", q.chart === "lollipop" ? "bars bars-lollipop" : "bars");
     list.setAttribute("aria-hidden", "true");
-    options.forEach((o) => {
+    options.forEach((o, i) => {
       const row = el("div", "bar-row");
+      stagger(row, i);
       const track = el("div", "bar-track");
       const bar = el("span", "bar");
       bar.style.setProperty("--f", o.count / q.n);
@@ -175,10 +195,24 @@
     const around = 2 * Math.PI * r;
     const total = q.options.reduce((sum, o) => sum + o.count, 0);
     const svg = svgEl("svg", { viewBox: "0 0 200 200", class: "donut" });
+
+    // A ring mask that draws clockwise from the top uncovers the slices.
+    const maskId = "sweep-" + q.id.toLowerCase();
+    const mask = svgEl("mask", { id: maskId, maskUnits: "userSpaceOnUse", x: 0, y: 0, width: 200, height: 200 });
+    const sweep = svgEl("circle", {
+      class: "donut-sweep", cx: 100, cy: 100, r, fill: "none", stroke: "#fff", "stroke-width": 44,
+      "stroke-dasharray": around + " " + around,
+      transform: "rotate(-90 100 100)"
+    });
+    sweep.style.setProperty("--around", around + "px");
+    mask.append(sweep);
+    const slices = svgEl("g", { mask: "url(#" + maskId + ")" });
+    svg.append(mask, slices);
+
     let start = 0;
     q.options.forEach((o, i) => {
       const length = (o.count / total) * around;
-      svg.append(svgEl("circle", {
+      slices.append(svgEl("circle", {
         cx: 100, cy: 100, r, fill: "none", stroke: rgb(colors[i]), "stroke-width": 40,
         "stroke-dasharray": Math.max(length - 2, 0) + " " + around,
         "stroke-dashoffset": -start,
@@ -207,15 +241,16 @@
     const options = ordered(q);
     const list = el("div", "ranked");
     list.setAttribute("aria-hidden", "true");
-    options.forEach((o) => {
+    options.forEach((o, i) => {
       const row = el("div", "ranked-row");
+      stagger(row, i);
       const body = el("div", "ranked-body");
       const meter = el("div", "ranked-meter");
       const bar = el("span", "ranked-bar");
       bar.style.setProperty("--f", o.count / q.n);
-      meter.append(bar, el("span", "value-count", number(o.count)));
+      meter.append(bar, counter("value-count", o.count));
       body.append(el("span", "ranked-label", o.label), meter);
-      row.append(el("span", "ranked-pct", percent(o.count, q.n) + "%"), body);
+      row.append(counter("ranked-pct", percent(o.count, q.n), "%"), body);
       list.append(row);
     });
     fig.append(list, footnote(q), answerTable(q, options));
@@ -229,8 +264,9 @@
     const largest = Math.max(...options.map((o) => o.count));
     const grid = el("div", "circles");
     grid.setAttribute("aria-hidden", "true");
-    options.forEach((o) => {
+    options.forEach((o, i) => {
       const cell = el("div", "circle-cell");
+      stagger(cell, i);
       const box = el("span", "circle-box");
       const dot = el("span", o.last ? "circle circle-muted" : "circle");
       dot.style.setProperty("--s", largest ? Math.sqrt(o.count / largest) : 0);
@@ -261,17 +297,21 @@
     table.tHead.append(headRow);
 
     const body = el("tbody");
-    q.rows.forEach((r) => {
+    q.rows.forEach((r, i) => {
       const tr = el("tr");
+      stagger(tr, i);
       const th = el("th", null, r.label);
       th.scope = "row";
       tr.append(th);
       r.counts.forEach((count) => {
         const fill = mix(LOW, HIGH, max ? count / max : 0);
-        const td = el("td", null, percent(count, q.n) + "%");
-        td.style.backgroundColor = rgb(fill);
-        td.style.color = rgb(textOn(fill));
-        td.append(el("span", "sr-only", " (" + number(count) + ")"));
+        const td = el("td");
+        td.style.setProperty("--fill", rgb(fill));
+        td.style.setProperty("--ink", rgb(textOn(fill)));
+        // Screen readers skip the counting number and get the final one.
+        const shown = counter(null, percent(count, q.n), "%");
+        shown.setAttribute("aria-hidden", "true");
+        td.append(shown, el("span", "sr-only", withCount(count, q.n)));
         tr.append(td);
       });
       body.append(tr);
@@ -295,18 +335,20 @@
     });
     chart.append(legend);
 
+    let index = 0;
     const tableGroups = q.groups.map((g) => {
       const rows = g.rows.slice().sort((a, b) => b.counts[0] - a.counts[0]);
       const group = el("div", "stack-group");
       group.append(el("p", "group-title", g.label));
       rows.forEach((r) => {
         const row = el("div", "bar-row");
+        stagger(row, index++);
         const stack = el("div", "stack");
         r.counts.forEach((count, i) => {
           if (!count) return;
           const seg = el("span", "seg seg-" + i);
           seg.style.flexGrow = count;
-          seg.append(el("span", "seg-pct", percent(count, q.n) + "%"));
+          seg.append(counter("seg-pct", percent(count, q.n), "%"));
           stack.append(seg);
         });
         row.append(el("span", "bar-label", r.label), stack);
@@ -329,11 +371,11 @@
       const picked = q.options.filter((o) => q.headline.includes(o.label));
       const count = picked.reduce((sum, o) => sum + o.count, 0);
       const headline = el("p", "headline");
-      headline.append(
-        el("span", "headline-num", percent(count, q.n) + "% picked " + picked.map((o) => o.label).join(" or ")),
-        " ",
-        el("span", "headline-sub", number(count) + " of " + number(q.n) + " people")
-      );
+      const num = el("span", "headline-num");
+      num.append(counter(null, percent(count, q.n), "%"), " picked " + picked.map((o) => o.label).join(" or "));
+      const sub = el("span", "headline-sub");
+      sub.append(counter(null, count), " of " + number(q.n) + " people");
+      headline.append(num, " ", sub);
       fig.append(headline);
     }
 
@@ -342,6 +384,7 @@
     const plot = el("div", "col-plot");
     q.options.forEach((o, i) => {
       const col = el("div", "col");
+      stagger(col, i);
       const bar = el("span", "col-bar");
       bar.style.setProperty("--f", o.count / q.n);
       if (colors) bar.style.background = rgb(colors[i]);
@@ -378,12 +421,22 @@
     node.textContent = fills[node.dataset.fill];
   });
 
+  // The headline count climbs too; screen readers get the final number.
+  const countNum = document.querySelector(".count-num");
+  const shownCount = counter(null, survey.respondents);
+  shownCount.setAttribute("aria-hidden", "true");
+  countNum.append(shownCount, el("span", "sr-only", number(survey.respondents)));
+
   // A percent goes inside a segment only when it fits with room to spare.
+  // It is measured at its final value, since it may still be counting up.
   function fitSegmentLabels() {
     document.querySelectorAll(".seg").forEach((seg) => {
       const label = seg.firstChild;
+      const shown = label.textContent;
+      label.textContent = format(label, Number(label.dataset.to));
       label.hidden = false;
       label.hidden = label.getBoundingClientRect().width + 16 > seg.getBoundingClientRect().width;
+      label.textContent = shown;
     });
   }
 
@@ -403,4 +456,49 @@
   layout();
   if (document.fonts) document.fonts.ready.then(layout);
   if (window.ResizeObserver) new ResizeObserver(layout).observe(document.body);
+
+  // Fast at first, then slowing into the final value. Matches --ease in style.css.
+  const ease = (t) => 1 - Math.pow(1 - t, 4);
+
+  function countUp(node) {
+    const style = getComputedStyle(node);
+    const wait = parseFloat(style.getPropertyValue("--delay")) || 0;
+    const length = parseFloat(style.getPropertyValue("--grow"));
+    const to = Number(node.dataset.to);
+    let start;
+    function frame(now) {
+      if (start === undefined) start = now + wait;
+      // Once motion is switched off (for printing), jump to the end.
+      const t = root.classList.contains("motion") ? Math.min(Math.max((now - start) / length, 0), 1) : 1;
+      node.textContent = format(node, Math.round(to * ease(t)));
+      if (t < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  if (motion) {
+    const counters = document.querySelectorAll("[data-to]");
+    counters.forEach((node) => {
+      node.textContent = format(node, 0);
+    });
+
+    const watcher = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        watcher.unobserve(entry.target);
+        entry.target.classList.add("is-in");
+        entry.target.querySelectorAll("[data-to]").forEach(countUp);
+      });
+    }, { rootMargin: "0px 0px -15% 0px" });
+    document.querySelectorAll(".count, .chart").forEach((node) => watcher.observe(node));
+
+    // A printed page shows every chart finished, including ones never scrolled to.
+    window.addEventListener("beforeprint", () => {
+      watcher.disconnect();
+      root.classList.remove("motion");
+      counters.forEach((node) => {
+        node.textContent = format(node, Number(node.dataset.to));
+      });
+    });
+  }
 })();
